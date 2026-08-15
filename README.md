@@ -1,7 +1,7 @@
-# FleetIQ — Fleet Operations Intelligence on AWS
+# FleetFlow — Fleet Operations Intelligence on AWS
 
 A serverless analytics + AI layer that sits alongside **TeamClok** (a React Native field-workforce
-app backed by Supabase). FleetIQ ingests TeamClok's operational data into an AWS data lake and turns
+app backed by Supabase). FleetFlow ingests TeamClok's operational data into an AWS data lake and turns
 it into insights the fleet owner can't get from a transactional database:
 
 1. **Analytics data lake** — S3 + Glue + Athena over shifts, fuel, odometer, loads, and payroll data.
@@ -10,7 +10,7 @@ it into insights the fleet owner can't get from a transactional database:
 3. **Natural-language analytics assistant** — ask questions in plain English; Claude on Amazon Bedrock
    writes the SQL.
 4. **Owner dashboard** — a standalone web app (S3 + CloudFront + API Gateway) with anomaly feed,
-   driver-hours / fuel-economy panels, and  "Ask FleetIQ".
+   driver-hours / fuel-economy panels, and  "Ask FleetFlow".
 
 ---
 
@@ -19,7 +19,7 @@ it into insights the fleet owner can't get from a transactional database:
 Fleet owners running TeamClok capture every shift, fuel stop, and odometer
 reading, but Supabase can't answer questions like *"what's my fuel
 cost per unit this quarter?"* or surface a truck logging fuel it couldn't possibly have burned.
-FleetIQ closes that gap without touching the production app.
+FleetFlow closes that gap without touching the production app.
 
 ## Architecture
 
@@ -37,8 +37,8 @@ A $20 AWS Budget alert guards against surprises.
   verification. 
 - **Read-only guard.** The assistant rejects anything that isn't a single
   `SELECT`/`WITH` statement before it can reach Athena.
-- **FleetIQ never touches the production app.** TeamClok (React Native +
-  Supabase) is unmodified; FleetIQ is a separate analytics plane that reads
+- **FleetFlow never touches the production app.** TeamClok (React Native +
+  Supabase) is unmodified; FleetFlow is a separate analytics plane that reads
    export. The dashboard is its own S3+CloudFront site.
 
 ## Demo Link
