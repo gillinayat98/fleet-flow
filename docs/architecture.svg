@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 680" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#898781"/>
+    </marker>
+  </defs>
+
+  <rect width="1220" height="680" fill="#f9f9f7"/>
+  <text x="30" y="38" font-size="18" font-weight="700" fill="#0b0b0b">FleetIQ — serverless fleet analytics &amp; AI on AWS</text>
+  <text x="30" y="58" font-size="12" fill="#52514e">A separate analytics plane for the TeamClok workforce app. Infrastructure defined with AWS CDK (Python).</text>
+
+  <!-- ============ BAND 1 : INGEST ============ -->
+  <text x="30" y="96" font-size="11" font-weight="600" fill="#898781" letter-spacing="1">1 · INGEST (NIGHTLY)</text>
+
+  <!-- TeamClok / Supabase (external) -->
+  <rect x="30" y="108" width="190" height="64" rx="8" fill="#ffffff" stroke="#c9c8c1"/>
+  <text x="125" y="134" font-size="13" font-weight="600" fill="#52514e" text-anchor="middle">TeamClok · Supabase</text>
+  <text x="125" y="152" font-size="11" fill="#898781" text-anchor="middle">production app (unchanged)</text>
+
+  <!-- extract -->
+  <rect x="270" y="108" width="190" height="64" rx="8" fill="#ffffff" stroke="#c9c8c1"/>
+  <text x="365" y="134" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Python extract</text>
+  <text x="365" y="152" font-size="11" fill="#898781" text-anchor="middle">data minimization</text>
+
+  <!-- S3 lake -->
+  <rect x="510" y="108" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="605" y="134" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">S3 data lake</text>
+  <text x="605" y="152" font-size="11" fill="#898781" text-anchor="middle">Parquet · date-partitioned</text>
+
+  <!-- Glue -->
+  <rect x="750" y="108" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="845" y="134" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Glue crawler → catalog</text>
+  <text x="845" y="152" font-size="11" fill="#898781" text-anchor="middle">schema per table</text>
+
+  <!-- Athena -->
+  <rect x="990" y="108" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="1085" y="134" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Athena</text>
+  <text x="1085" y="152" font-size="11" fill="#898781" text-anchor="middle">serverless SQL</text>
+
+  <line x1="220" y1="140" x2="266" y2="140" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="460" y1="140" x2="506" y2="140" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="700" y1="140" x2="746" y2="140" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="940" y1="140" x2="986" y2="140" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ============ BAND 2 : DETECT & ASK ============ -->
+  <text x="30" y="286" font-size="11" font-weight="600" fill="#898781" letter-spacing="1">2 · DETECT &amp; ASK</text>
+
+  <!-- EventBridge -->
+  <rect x="30" y="298" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="125" y="324" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">EventBridge</text>
+  <text x="125" y="342" font-size="11" fill="#898781" text-anchor="middle">daily schedule</text>
+
+  <!-- anomaly detector -->
+  <rect x="270" y="298" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="365" y="324" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">anomaly-detector λ</text>
+  <text x="365" y="342" font-size="11" fill="#898781" text-anchor="middle">validated SQL rules</text>
+
+  <!-- nl query -->
+  <rect x="510" y="298" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="605" y="324" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">nl-query λ</text>
+  <text x="605" y="342" font-size="11" fill="#898781" text-anchor="middle">text-to-SQL + read-only guard</text>
+
+  <!-- Bedrock -->
+  <rect x="750" y="298" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="845" y="324" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">Bedrock · Claude Haiku</text>
+  <text x="845" y="342" font-size="11" fill="#898781" text-anchor="middle">global inference profile</text>
+
+  <line x1="220" y1="330" x2="266" y2="330" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="700" y1="322" x2="746" y2="322" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="746" y1="340" x2="700" y2="340" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- detector -> Athena (runs SQL) -->
+  <path d="M 460 314 H 480 V 230 H 1040 V 176" fill="none" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="700" y="224" font-size="10.5" fill="#898781">runs queries</text>
+
+  <!-- detector -> S3 (writes flags, dashed) -->
+  <path d="M 365 298 V 240 H 560 V 176" fill="none" stroke="#898781" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="380" y="234" font-size="10.5" fill="#898781">writes anomalies/ (queryable table)</text>
+
+  <!-- nl-query -> Athena -->
+  <path d="M 655 298 V 250 H 1110 V 176" fill="none" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="890" y="244" font-size="10.5" fill="#898781">runs generated SQL</text>
+
+  <!-- ============ BAND 3 : SERVE ============ -->
+  <text x="30" y="486" font-size="11" font-weight="600" fill="#898781" letter-spacing="1">3 · SERVE (OWNER DASHBOARD)</text>
+
+  <!-- browser -->
+  <rect x="30" y="498" width="190" height="64" rx="8" fill="#ffffff" stroke="#c9c8c1"/>
+  <text x="125" y="524" font-size="13" font-weight="600" fill="#52514e" text-anchor="middle">Owner's browser</text>
+  <text x="125" y="542" font-size="11" fill="#898781" text-anchor="middle">tiles · anomaly feed · chat</text>
+
+  <!-- CloudFront -->
+  <rect x="270" y="498" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="365" y="524" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">CloudFront + S3 (OAC)</text>
+  <text x="365" y="542" font-size="11" fill="#898781" text-anchor="middle">static dashboard page</text>
+
+  <!-- API Gateway -->
+  <rect x="510" y="498" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="605" y="524" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">API Gateway</text>
+  <text x="605" y="542" font-size="11" fill="#898781" text-anchor="middle">key + daily quota (spend cap)</text>
+
+  <!-- dashboard api -->
+  <rect x="750" y="498" width="190" height="64" rx="8" fill="#ffffff" stroke="#2a78d6"/>
+  <text x="845" y="524" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">dashboard-api λ</text>
+  <text x="845" y="542" font-size="11" fill="#898781" text-anchor="middle">canned validated SQL</text>
+
+  <line x1="220" y1="530" x2="266" y2="530" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="700" y1="530" x2="746" y2="530" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- browser -> API GW (below boxes) -->
+  <path d="M 125 562 V 600 H 605 V 566" fill="none" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="290" y="594" font-size="10.5" fill="#898781">GET /insights · POST /ask</text>
+
+  <!-- API GW -> nl-query (vertical) -->
+  <line x1="580" y1="498" x2="580" y2="366" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="466" y="440" font-size="10.5" fill="#898781">/ask</text>
+
+  <!-- dashboard-api -> Athena -->
+  <path d="M 940 530 H 1010 V 176" fill="none" stroke="#898781" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="1018" y="440" font-size="10.5" fill="#898781">/insights</text>
+
+  <footer/>
+  <text x="30" y="650" font-size="11" fill="#898781">All resources in ca-central-1 (Montréal) except Bedrock model inference, which routes via a global inference profile — a documented data-residency trade-off.</text>
+  <text x="30" y="666" font-size="11" fill="#898781">Security: encrypted private buckets · TLS-only · least-privilege IAM per Lambda · read-only SQL guard on the assistant · usage-plan quota as a hard Bedrock spend ceiling.</text>
+</svg>

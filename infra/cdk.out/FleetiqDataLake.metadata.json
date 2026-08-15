@@ -1,0 +1,857 @@
+{
+  "/FleetiqDataLake": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/FleetiqDataLake/GlueDatabase": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "GlueDatabase"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/RawCrawler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "RawCrawler"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/WorkGroup": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WorkGroup"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-singleton",
+      "data": true
+    },
+    {
+      "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+      "data": 2
+    }
+  ],
+  "/FleetiqDataLake/DataLakeBucket": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DataLakeBucket"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/GlueDatabaseName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "GlueDatabaseName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/CrawlerName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CrawlerName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/AthenaWorkgroup": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "AthenaWorkgroup"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/AnomalyDetectorFn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "AnomalyDetectorFn"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/NlQueryFn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "NlQueryFn"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/ApiUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ApiUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DataLake/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DataLakeE54831B2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/FleetiqDataLake/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/CrawlerRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CrawlerRoleA9495AEE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/AnomalyDetector/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "AnomalyDetectorA36086E5"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DailyDetection/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DailyDetectionA07D2522"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DailyDetection/AllowEventRuleFleetiqDataLakeAnomalyDetectorB6AAFBE6": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DailyDetectionAllowEventRuleFleetiqDataLakeAnomalyDetectorB6AAFBE6D1A4CF75"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/NlQuery/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "NlQuery7F2EDD66"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardApi/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardApi9FF75625"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApi15346EB7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Account": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiAccount6BCBF921"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Endpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiEndpointDD74211F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardSite/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardSite59D0D36C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/FleetiqDataLake/DashboardDistribution/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardDistributionD4569E0E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DataLake/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DataLakePolicy6EFA067A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/FleetiqDataLake/DataLake/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DataLakeAutoDeleteObjectsCustomResource0FC2A3BD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/CrawlerRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CrawlerRoleDefaultPolicy145A4322"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/AnomalyDetector/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "AnomalyDetectorServiceRole797B3C23"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/NlQuery/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "NlQueryServiceRoleEDC748D8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardApi/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardApiServiceRole05352823"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/CloudWatchRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiCloudWatchRole23553B47"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Deployment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiDeploymentE880A00Aa52bbafe5e617a4aec28450511ceeaa2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/DeploymentStage.prod/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiDeploymentStageprod6D024F5A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/DemoApiKey/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiDemoApiKey3429EC92"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/DemoUsagePlan/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiDemoUsagePlanA5DE7A6D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/DemoUsagePlan/UsagePlanKeyResource:FleetiqDataLakeDashboardRestApiDemoApiKeyE400402D": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiDemoUsagePlanUsagePlanKeyResourceFleetiqDataLakeDashboardRestApiDemoApiKeyE400402D8914B82C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardSite/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardSitePolicy66CE5827"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/FleetiqDataLake/DashboardSite/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardSiteAutoDeleteObjectsCustomResource7A3089C9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DeployDashboard/AwsCliLayer/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DeployDashboardAwsCliLayer3969B9EF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DeployDashboard/CustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DeployDashboardCustomResource344C383B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/AnomalyDetector/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "AnomalyDetectorServiceRoleDefaultPolicy4F721B67"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/NlQuery/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "NlQueryServiceRoleDefaultPolicyCE82F21E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardApi/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardApiServiceRoleDefaultPolicyEB5F433C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiOPTIONS0BA43E9A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/insights/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiinsights72BD9895"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/ask/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiaskCD528C99"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardDistribution/Origin1/S3OriginAccessControl/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardDistributionOrigin1S3OriginAccessControlBA44AE78"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/insights/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiinsightsOPTIONS3614BF2F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/insights/GET/ApiPermission.FleetiqDataLakeDashboardRestApi737FAE31.GET..insights": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiinsightsGETApiPermissionFleetiqDataLakeDashboardRestApi737FAE31GETinsights6EAFA984"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/insights/GET/ApiPermission.Test.FleetiqDataLakeDashboardRestApi737FAE31.GET..insights": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiinsightsGETApiPermissionTestFleetiqDataLakeDashboardRestApi737FAE31GETinsights3ADC5786"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/insights/GET/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiinsightsGET39BDA4EB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/ask/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiaskOPTIONS77C7842A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/ask/POST/ApiPermission.FleetiqDataLakeDashboardRestApi737FAE31.POST..ask": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiaskPOSTApiPermissionFleetiqDataLakeDashboardRestApi737FAE31POSTask8B327C68"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/ask/POST/ApiPermission.Test.FleetiqDataLakeDashboardRestApi737FAE31.POST..ask": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiaskPOSTApiPermissionTestFleetiqDataLakeDashboardRestApi737FAE31POSTask9A06C447"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FleetiqDataLake/DashboardRestApi/Default/ask/POST/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DashboardRestApiaskPOSTA4367A95"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}

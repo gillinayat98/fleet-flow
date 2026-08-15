@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FleetIQ — Fleet Intelligence</title>
+<style>
+  :root {
+    --page:        #f9f9f7;
+    --surface:     #fcfcfb;
+    --ink:         #0b0b0b;
+    --ink-2:       #52514e;
+    --muted:       #898781;
+    --grid:        #e1e0d9;
+    --border:      rgba(11,11,11,0.10);
+    --series-1:    #2a78d6;   /* magnitude bars */
+    --seq-150:     #b7d3f6;   /* bar track      */
+    --good:        #0ca30c;
+    --warning:     #fab219;
+    --serious:     #ec835a;
+    --critical:    #d03b3b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page:      #0d0d0d;
+      --surface:   #1a1a19;
+      --ink:       #ffffff;
+      --ink-2:     #c3c2b7;
+      --muted:     #898781;
+      --grid:      #2c2c2a;
+      --border:    rgba(255,255,255,0.10);
+      --series-1:  #3987e5;
+      --seq-150:   #184f95;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--page); color: var(--ink);
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 24px; max-width: 1100px; margin: 0 auto;
+  }
+  header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  header h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+  header .sub { color: var(--ink-2); }
+  header .stamp { color: var(--muted); font-size: 12px; margin-left: auto; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .tile .label { color: var(--ink-2); font-size: 12px; margin-bottom: 4px; }
+  .tile .value { font-size: 26px; font-weight: 700; }
+  .tile .value.alert { color: var(--critical); }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; margin-bottom: 16px;
+  }
+  .card h2 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+  .card .desc { color: var(--muted); font-size: 12px; margin-bottom: 12px; }
+  .card.wide { grid-column: 1 / -1; }
+
+  /* bar list — thin marks, rounded data-end, value label at end */
+  .barrow { display: grid; grid-template-columns: 130px 1fr 64px; align-items: center; gap: 10px; padding: 5px 0; }
+  .barrow .name { color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .track { background: none; border-radius: 4px; height: 14px; position: relative; }
+  .fill {
+    position: absolute; inset: 0 auto 0 0; background: var(--series-1);
+    border-radius: 0 4px 4px 0; min-width: 2px;
+  }
+  .barrow .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .barrow:hover .fill { filter: brightness(1.12); }
+
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; color: var(--muted); font-size: 12px; font-weight: 500; padding: 6px 8px; border-bottom: 1px solid var(--grid); }
+  td { padding: 7px 8px; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+  .status { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+
+  /* ask panel */
+  .askrow { display: flex; gap: 8px; }
+  .askrow input {
+    flex: 1; padding: 10px 12px; border: 1px solid var(--grid); border-radius: 8px;
+    background: var(--page); color: var(--ink); font: inherit;
+  }
+  .askrow button {
+    padding: 10px 18px; border: none; border-radius: 8px; background: var(--series-1);
+    color: #fff; font: inherit; font-weight: 600; cursor: pointer;
+  }
+  .askrow button:disabled { opacity: 0.5; cursor: wait; }
+  .answer { margin-top: 12px; display: none; }
+  .answer .text { padding: 12px; background: var(--page); border-radius: 8px; border: 1px solid var(--grid); }
+  .answer details { margin-top: 8px; color: var(--ink-2); }
+  .answer summary { cursor: pointer; font-size: 12px; color: var(--muted); }
+  .answer pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; padding: 8px 12px; background: var(--page); border-radius: 8px; margin-top: 6px; }
+  .hint { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  .loading { color: var(--muted); padding: 8px 0; }
+  .err { color: var(--critical); }
+  footer { color: var(--muted); font-size: 12px; margin-top: 8px; text-align: center; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>FleetIQ</h1>
+    <span class="sub">Fleet operations intelligence</span>
+    <span class="stamp" id="stamp"></span>
+  </header>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="card wide">
+    <h2>Ask FleetIQ</h2>
+    <div class="desc">Plain-English questions over the fleet data lake (Claude on Amazon Bedrock)</div>
+    <div class="askrow">
+      <input id="q" placeholder="e.g. Which drivers worked the most hours last week?"
+             onkeydown="if(event.key==='Enter')ask()">
+      <button id="askbtn" onclick="ask()">Ask</button>
+    </div>
+    <div class="answer" id="answer">
+      <div class="text" id="answertext"></div>
+      <details><summary>Show generated SQL (verify before trusting)</summary><pre id="answersql"></pre></details>
+    </div>
+    <div class="hint">The assistant writes its own read-only SQL — always review it before acting on the numbers. Validated metrics live in the panels below.</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Driver hours</h2>
+      <div class="desc">Completed shifts, all time</div>
+      <div id="hours" class="loading">Loading…</div>
+    </div>
+    <div class="card">
+      <h2>Fuel economy by unit</h2>
+      <div class="desc">km/L from consecutive fill-ups (validated methodology)</div>
+      <div id="fuel" class="loading">Loading…</div>
+    </div>
+    <div class="card wide">
+      <h2>Anomaly feed</h2>
+      <div class="desc">Latest run of the scheduled detector</div>
+      <div id="anoms" class="loading">Loading…</div>
+    </div>
+  </div>
+
+  <footer>FleetIQ — serverless analytics on AWS (S3 · Glue · Athena · Lambda · Bedrock) · demo</footer>
+
+<script>
+let CFG = null;
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+// anomaly type → status role (icon + label, never color alone)
+const STATUS = {
+  missing_hourly_rate:      { color: "var(--critical)", icon: "✕", label: "critical" },
+  odometer_backwards:       { color: "var(--serious)",  icon: "▲", label: "serious"  },
+  implausible_low_economy:  { color: "var(--serious)",  icon: "▲", label: "serious"  },
+  implausible_high_economy: { color: "var(--serious)",  icon: "▲", label: "serious"  },
+  zero_or_missing_litres:   { color: "var(--serious)",  icon: "▲", label: "serious"  },
+  excessive_shift:          { color: "var(--warning)",  icon: "!",  label: "warning"  },
+};
+
+function barList(el, rows, nameIdx, valIdx, unit) {
+  if (!rows.length) { el.innerHTML = '<div class="loading">No data</div>'; return; }
+  const max = Math.max(...rows.map(r => parseFloat(r[valIdx]) || 0));
+  el.innerHTML = rows.map(r => {
+    const v = parseFloat(r[valIdx]) || 0;
+    const pct = max ? (v / max * 100) : 0;
+    return `<div class="barrow" title="${esc(r[nameIdx])}: ${v}${unit}">
+      <div class="name">${esc(r[nameIdx])}</div>
+      <div class="track"><div class="fill" style="width:${pct}%"></div></div>
+      <div class="val">${v}${unit}</div>
+    </div>`;
+  }).join("");
+}
+
+function anomalyTable(el, data) {
+  if (!data.rows.length) { el.innerHTML = '<div class="loading">No anomalies in the latest run 🎉</div>'; return; }
+  const ti = data.columns.indexOf("anomaly_type"), ei = data.columns.indexOf("entity"),
+        ci = data.columns.indexOf("category"), di = data.columns.indexOf("detail");
+  el.innerHTML = `<table><thead><tr><th>Severity</th><th>Type</th><th>Category</th><th>Entity</th><th>Detail</th></tr></thead><tbody>` +
+    data.rows.map(r => {
+      const s = STATUS[r[ti]] || { color: "var(--muted)", icon: "•", label: "info" };
+      return `<tr>
+        <td><span class="status"><span class="dot" style="background:${s.color}"></span>${s.icon} ${s.label}</span></td>
+        <td>${esc(r[ti]).replaceAll("_"," ")}</td><td>${esc(r[ci])}</td>
+        <td>${esc(r[ei])}</td><td style="color:var(--ink-2)">${esc(r[di])}</td>
+      </tr>`;
+    }).join("") + "</tbody></table>";
+}
+
+function tiles(ins) {
+  const drivers  = ins.driver_hours.rows.length;
+  const units    = ins.fuel_economy.rows.length;
+  const hoursIdx = ins.driver_hours.columns.indexOf("hours");
+  const hours    = ins.driver_hours.rows.reduce((a, r) => a + (parseFloat(r[hoursIdx]) || 0), 0);
+  const anoms    = ins.anomalies.rows.length;
+  document.getElementById("tiles").innerHTML = [
+    ["Active drivers", drivers, ""],
+    ["Units fuelled", units, ""],
+    ["Total hours", hours.toFixed(1), ""],
+    ["Open anomalies", anoms, anoms > 0 ? "alert" : ""],
+  ].map(([l, v, cls]) =>
+    `<div class="tile"><div class="label">${l}</div><div class="value ${cls}">${v}</div></div>`
+  ).join("");
+}
+
+async function api(path, opts = {}) {
+  const r = await fetch(CFG.apiUrl + path, {
+    ...opts,
+    headers: { "X-Api-Key": CFG.apiKey, "Content-Type": "application/json", ...(opts.headers || {}) },
+  });
+  if (r.status === 429) throw new Error("Daily demo quota reached — try again tomorrow.");
+  if (!r.ok) throw new Error(`API error ${r.status}`);
+  return r.json();
+}
+
+async function load() {
+  CFG = await (await fetch("./config.json")).json();
+  document.getElementById("stamp").textContent = "loaded " + new Date().toLocaleString();
+  try {
+    const ins = await api("insights");
+    tiles(ins);
+    const dh = ins.driver_hours, fe = ins.fuel_economy;
+    barList(document.getElementById("hours"), dh.rows, dh.columns.indexOf("driver"), dh.columns.indexOf("hours"), "h");
+    barList(document.getElementById("fuel"), fe.rows, fe.columns.indexOf("unit_no"), fe.columns.indexOf("avg_km_per_litre"), " km/L");
+    anomalyTable(document.getElementById("anoms"), ins.anomalies);
+  } catch (e) {
+    for (const id of ["hours", "fuel", "anoms"])
+      document.getElementById(id).innerHTML = `<div class="err">${esc(e.message)}</div>`;
+  }
+}
+
+async function ask() {
+  const q = document.getElementById("q").value.trim();
+  if (!q || !CFG) return;
+  const btn = document.getElementById("askbtn"), box = document.getElementById("answer"),
+        text = document.getElementById("answertext"), sqlEl = document.getElementById("answersql");
+  btn.disabled = true; box.style.display = "block";
+  text.textContent = "Thinking… (writes SQL, runs it in Athena, summarizes)"; sqlEl.textContent = "";
+  try {
+    const d = await api("ask", { method: "POST", body: JSON.stringify({ question: q }) });
+    text.textContent = d.answer || d.error || "(no answer)";
+    sqlEl.textContent = d.sql || "";
+  } catch (e) {
+    text.innerHTML = `<span class="err">${esc(e.message)}</span>`;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+load();
+</script>
+</body>
+</html>
